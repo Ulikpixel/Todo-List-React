@@ -1,0 +1,32 @@
+.field {
+    padding: 5px;
+    outline: none;
+    font-size: 25px;
+    margin: 10px 5px;
+}
+
+.add {
+    font-size: 20px;
+    padding: 8px;
+    position: relative;
+    bottom: 2px;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    background: rgb(255, 187, 0);
+    color: white;
+    border: solid 1px rgb(255, 187, 0);
+}
+
+.add:hover {
+    color: rgb(255, 187, 0);
+    background: white;
+}
+
+.done {
+    color: green;
+}
+
+.active {
+    color: red;
+}

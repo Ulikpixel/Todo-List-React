@@ -1,0 +1,13 @@
+.list {
+    overflow: hidden;
+    max-width: 600px;
+    min-height: 300px;
+    margin: 20px auto;
+}
+
+.block {
+    text-align: center;
+    margin: 50px auto;
+    position: relative;
+    top: 100px;
+}
