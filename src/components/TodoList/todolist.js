@@ -3,9 +3,9 @@ import s from './todolist.module.css';
 import Todoitem from '../TodoItem/todoitem';
 import todos from '../../redux/date';
 import Todofield from '../Todofield/todofield';
+import { Context } from '../../redux/date';
 
 function Todolist() {
-
     const [todo, setTodo] = useState(todos)
 
     function onToggle(id){
@@ -19,20 +19,34 @@ function Todolist() {
         })
     )}
 
-    const activeTodos = todos.filter(todo => !todo.completed)
-    const doneTodos = todos.filter(todo => todo.completed)
+    function removeTask(id){
+        setTodo(todo.filter(todo => todo.id !== id))
+    }
+
+    function addTodo(title){
+        setTodo(
+            todo.concat([
+                { id: Date.now(), title, completed: false }
+            ])
+        )
+    }
+
+    const activeTodos = todo.filter(todo => !todo.completed)
+    const doneTodos   = todo.filter(todo => todo.completed)
 
     return (
-        <div className={s.block}>
-            <Todofield active={activeTodos} />
-            <ul className={s.list}>
-                { [...activeTodos, ...doneTodos].map((todo, index) => <Todoitem 
-                    todo={todo} 
-                    index={index} 
-                    onChange={onToggle} 
-                    key={todo.id} />) }
-            </ul>
-        </div>
+        <Context.Provider value={{ removeTask }}> 
+            <div className={s.block}>
+                <Todofield active={activeTodos} onCreate={addTodo}/>
+                <ul className={s.list}>
+                    { [...activeTodos, ...doneTodos].map((todo, index) => <Todoitem 
+                        todo={todo} 
+                        index={index} 
+                        onChange={onToggle} 
+                        key={todo.id} />) }
+                </ul>
+            </div>
+        </Context.Provider>
     )
 }
 

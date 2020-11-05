@@ -1,14 +1,29 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import s from './todofield.module.css';
-import todos from '../../redux/date';
 
-function Todofield({ active }) {
+function Todofield({ active, onCreate }) {
+    const [value, setValue] = useState('');
+
+    function submitHandler(e){
+        e.preventDefault()
+
+        if (value.trim()) {
+            onCreate(value)
+            setValue('')
+        }
+    }
+
     return (
         <div className={s.box}>
-            <input type="text" className={s.field}/>
-            <button className={s.add}>ADD TODO</button>
-            <h2 className={active.length === 0 ? s.done : s.active}>
-                {active.length === 0 ? 'Введите новые задачи!' : `Количество задач: ${active.length}`}
+            <form onSubmit={submitHandler}>
+                <input type="text" 
+                       className={s.field} value={value} 
+                       onChange={e => setValue(e.target.value)}
+                />
+                <button className={s.add} type="submit">ADD TODO</button>
+            </form>
+            <h2 className={ active.length === 0 ? s.done : s.active }>
+                { active.length === 0 ? 'Введите новые задачи!' : `Количество задач: ${active.length}` }
             </h2>
         </div>
     )
