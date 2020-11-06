@@ -2,12 +2,31 @@
     overflow: hidden;
     max-width: 600px;
     min-height: 300px;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
 .block {
     text-align: center;
-    margin: 50px auto;
+    margin: 0 auto;
     position: relative;
     top: 100px;
+}
+
+.logo {
+    color: rgb(255, 187, 0);
+}
+
+.logo span {
+    color: rgb(13, 243, 13);
+}
+
+.frame {
+    color: rgb(13, 243, 13);
+    font-size: 35px;
+    position: relative;
+    bottom: 20px;
+}
+
+.frame span {
+    color: rgb(255, 187, 0);
 }

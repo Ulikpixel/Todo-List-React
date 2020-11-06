@@ -2,25 +2,29 @@
     padding: 5px;
     outline: none;
     font-size: 25px;
-    margin: 10px 5px;
+    border: solid 1px rgb(255, 187, 0);
+    width: 425px;
+}
+
+.field:focus {
+    background: rgb(248, 235, 198);
 }
 
 .add {
     font-size: 20px;
     padding: 8px;
-    position: relative;
-    bottom: 2px;
     cursor: pointer;
     background: none;
     outline: none;
     background: rgb(255, 187, 0);
     color: white;
     border: solid 1px rgb(255, 187, 0);
+    position: relative;
+    bottom: 2px;
 }
 
 .add:hover {
-    color: rgb(255, 187, 0);
-    background: white;
+    background: rgb(252, 205, 75);
 }
 
 .done {
@@ -29,4 +33,26 @@
 
 .active {
     color: red;
+}
+
+@media screen and (max-width: 645px) {
+
+    .field {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .add {
+        bottom: 0;
+        width: 82%;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 560px){
+
+    .add {
+        width: 82%;
+    }
 }

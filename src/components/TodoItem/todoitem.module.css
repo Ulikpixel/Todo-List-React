@@ -2,12 +2,22 @@
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     margin-right: 40px;
     align-items: center;
-    border: solid 1px #ccc;
-    border-radius: 4px;
+    border: solid 1px rgb(104, 104, 104);
+    background: rgb(255, 187, 0);
     padding: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.item.completed {
+    background: rgb(13, 243, 13);
+}
+
+.item.completed span {
+    color: white;
 }
 
 .item strong {
@@ -36,6 +46,7 @@
 
 .done {
     text-decoration: line-through;
+    color: black;
 }
 
 .check {

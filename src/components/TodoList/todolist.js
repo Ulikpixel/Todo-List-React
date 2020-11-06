@@ -37,6 +37,7 @@ function Todolist() {
     return (
         <Context.Provider value={{ removeTask }}> 
             <div className={s.block}>
+                <h1 className={s.logo}>{'<'}TODO-<span>LIST{'/>'}</span></h1>
                 <Todofield active={activeTodos} onCreate={addTodo}/>
                 <ul className={s.list}>
                     { [...activeTodos, ...doneTodos].map((todo, index) => <Todoitem 
@@ -45,6 +46,7 @@ function Todolist() {
                         onChange={onToggle} 
                         key={todo.id} />) }
                 </ul>
+                    <h2 className={s.frame}>{"<"}React <span>JS{"/>"}</span></h2>
             </div>
         </Context.Provider>
     )

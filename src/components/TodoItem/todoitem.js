@@ -6,7 +6,7 @@ function Todoitem({ todo, index, onChange }) {
     const { removeTask } = useContext(Context)
 
     return (
-        <li className={s.item}>
+        <li className={ todo.completed ? `${s.item} ${s.completed}` : s.item }>
             <span className={ todo.completed ? s.done : '' }>
                 <input type="checkbox" onChange={() => onChange(todo.id)} />
                 <strong>{ index + 1 }</strong> 
